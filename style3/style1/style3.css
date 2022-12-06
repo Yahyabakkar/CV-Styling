@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgba(238, 238, 238, 0.594);
+}
+header {
+    background-color: gold;
+    color: rgb(51, 153, 153);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+figure{
+    height: 110px;
+    width: 110px;
+}
+
+figure img{
+
+    object-fit: contain;
+    height: 100%;
+    width:100%;
+}
+#contact h3 {
+    display: none;
+}
+#hobbies ul {
+    margin-left: 2.5rem;
+}
+#hobbies ul li {
+    line-height: 1.5;
+}
+
+header div {
+    display: flex;
+    margin-left: 2rem;
+}
+#wrapper {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contacts {
+    width: 55%;
+    margin-top: 1rem;
+    background-color:rgb(51, 153, 153);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.contacts dl {
+    display: flex;
+}
+.contacts dt {
+    width: 15%;
+    padding: 2.5px;
+}
+.contacts dd {
+    width: 80%;
+    padding: 2.5px;
+    background-color: gold;
+}
+
+/* content section */
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* line height */
+div section h3,
+.content section p {
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+.content section {
+    padding: 1rem;
+}
+
+/* red circle */
+div section h3 {
+    position: relative;
+    /* display: inline; */
+    margin-left: 25px;
+    margin-bottom: 8px;
+    padding-top: 3px;
+    padding-left: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+div section h3 {
+    line-height: 2;
+}
+
+div section h3::before {
+    content:"" ;
+    height: 25px;
+    width: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    display: inline;
+    background-color:rgb(51, 153, 153);
+    margin-top: 8px;
+}
+
+/* competencies */
+.skills-primary .skill,
+.skills-secondary .skill {
+    background-color: gold;
+    color: #eee;
+    font-weight: 600;
+    position: relative;
+    margin-top: 10px;
+    line-height: 4;
+    padding-left: 15px;
+    z-index: 1;
+}
+.skills-primary .skill {
+    background-color: gold;
+}
+.skills-secondary .skill {
+    background-color: gold;
+}
+
+.skills-primary .skill::before,
+.skills-secondary .skill::before {
+    position: absolute;
+    content: "";
+    height: 80%;
+    top: 0;
+    left: 0;
+    margin-top: 4px;
+    margin-left: 5px;
+    z-index: -1;
+}
+
+/* div[data-skill="5"]::before {
+    width: 50%;
+    background-color: red;
+} 
+
+!!! hashed because it has the same data-skills 'id'
+other solution below !!!
+*/
+
+.skills div:nth-child(1)::before {
+    background-color: rgb(51, 153, 153);
+}
+
+div[data-skill="3"]::before {
+    background-color: rgb(51, 153, 153);
+    width: 20%;
+}
+div[data-skill="1"]::before {
+    width: 40%;
+    background-color: rgb(51, 153, 153);
+}
+div[data-skill="9"]::before {
+    width: 50%;
+    background-color:rgb(51, 153, 153) !important;
+}
+div[data-skill="5"]::before {
+    width: 50%;
+    background-color: rgb(51, 153, 153);
+}
+div[data-skill="7"]::before {
+    width: 25%;
+    background-color:rgb(51, 153, 153);
+}
+
+.skills-secondary {
+    margin-top: 30px;
+}
+
+/* experience details  */
+.experience {
+    margin-top: 0.8rem;
+}
+.experience-details {
+    margin-left: 10px;
+    line-height: 1.5;
+}
+.experience-type,
+.experience-institution {
+    color: rgb(51, 153, 153);
+    font-size: large;
+}
+.experience-institution {
+    font-weight: 400;
+}
+.experience-date,
+.experience-location {
+    color: gray;
+}
+.experience-date-separator {
+    color: rgb(51, 153, 153);
+    font-weight: 900;
+}
+
+@media screen and (max-width: 768px) {
+    header div {
+        display: flex;
+        margin-left: 1rem;
+    }
+    #wrapper {
+        width: 100%;
+        padding-bottom: 6rem;
+    }
+    .content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contacts {
+        width: 85%;
+        bottom: 0;
+        left: 0;
+        top: unset;
+        margin: 5px auto;
+    }
+    header div {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 992px) and (max-width: 1200px)  {
+    header div {
+        display: flex;
+        margin-left: 1rem;
+    }
+    #wrapper{
+        width: 90%;
+        padding-bottom: 10rem;
+    }
+    .contacts {
+        width: 85%;
+        bottom: 0;
+        left: 0;
+        top: unset;
+        margin: 5px auto;
+    }
+}
+
+@media (min-width:768px) and (max-width:2000px) {
+    #wrapper {
+        width:90% !important;
+    }
+}
